@@ -1,23 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { PhotosListComponent } from './photos-list/photos-list.component';
+import { PhotosService } from '../photos/photos.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, PhotosListComponent],
+  imports: [BrowserModule, FormsModule],
+  providers: [PhotosService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+export class AppModule {}

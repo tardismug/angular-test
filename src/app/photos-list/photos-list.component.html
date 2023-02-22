@@ -1,0 +1,25 @@
+<h2>Les photos</h2>
+<select id="ChoixOrdre" [(ngModel)]="Tri" (change)="reload()">
+  <option value="all" selected>Toutes les photos</option>
+  <option value="most">Top 3</option>
+  <option value="least">Flop 3</option>
+</select>
+<div id="ListeTags">
+  <span class="unTag" *ngFor="let tag of alltags">
+    {{ tag }}
+  </span>
+</div>
+<div id="ListePhotos">
+  <div class="unePhoto" *ngFor="let photo of allphotos">
+    <img src="{{ photo.url }}" />
+    <div class="content">
+      <h3>{{ photo.name }}</h3>
+      <div class="desc">{{ photo.description }}</div>
+    </div>
+    <div class="meta">
+      <div>📅 {{ photo.date | date: 'd MMMM y' }}</div>
+      <div>⭐ {{ photo.tags.join(', ') }}</div>
+      <div>💰 {{ photo.sell }}</div>
+    </div>
+  </div>
+</div>
