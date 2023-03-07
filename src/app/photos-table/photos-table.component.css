@@ -1,0 +1,14 @@
+#TablePhotos {
+  border-collapse: collapse;
+  border: solid 1px #59e5d0;
+}
+#TablePhotos td {
+  border: solid 1px #59e5d0;
+}
+#TablePhotos .photo {
+  height: 50px;
+  width: 50px;
+  background: center center no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+}

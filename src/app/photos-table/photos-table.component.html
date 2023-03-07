@@ -1,0 +1,35 @@
+<h2>Table of photos</h2>
+<div class="ConteneurTable">
+  <table id="TablePhotos">
+    <thead>
+      <tr>
+        <th width="70">Image</th>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>📅 Date</th>
+        <th>⭐ Tags</th>
+        <th>💰 Ventes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="unePhoto" *ngFor="let photo of allphotos">
+        <td width="70">
+          <div
+            class="photo"
+            style="background-image:url({{ photo.url }});"
+          ></div>
+        </td>
+        <td class="content">
+          {{ photo.name }}
+        </td>
+        <td class="desc">{{ photo.description }}</td>
+        <td>{{ photo.date | date: 'd MMMM y' }}</td>
+        <td>{{ photo.tags.join(', ') }}</td>
+        <td>{{ photo.sell }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br />
+<br />
+<br /><br />

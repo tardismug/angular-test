@@ -3,17 +3,14 @@ import { Photo } from '../../photos/photos';
 import { PhotosService } from '../../photos/photos.service';
 
 @Component({
-  selector: 'app-photos-list',
-  templateUrl: './photos-list.component.html',
-  styleUrls: ['./photos-list.component.css'],
+  selector: 'app-photos-table',
+  templateUrl: './photos-table.component.html',
+  styleUrls: ['./photos-table.component.css'],
 })
-
-export class PhotosListComponent {
+export class PhotosTableComponent {
   public Tri = 'all';
   public Tagselected = 'all';
 
-  mostsoldphotos: Photo[] = [];
-  leastsoldphotos: Photo[] = [];
   allphotos: Photo[] = [];
   alltags: Array<string> = [];
 
@@ -28,13 +25,7 @@ export class PhotosListComponent {
   }
 
   setAllPhotos() {
-    if (this.Tri == 'least') {
-      this.allphotos = this.photosService.getLeastSoldPhotos();
-    } else if (this.Tri == 'most') {
-      this.allphotos = this.photosService.getMostSoldPhotos();
-    } else {
-      this.allphotos = this.photosService.getPhotos();
-    }
+    this.allphotos = this.photosService.getPhotos();
   }
 
   setAllTags() {
